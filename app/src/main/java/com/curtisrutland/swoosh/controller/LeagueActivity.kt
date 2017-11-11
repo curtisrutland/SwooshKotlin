@@ -19,6 +19,23 @@ class LeagueActivity : BaseActivity() {
         setContentView(R.layout.activity_league)
     }
 
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        outState?.putParcelable(EXTRA_PLAYER, player)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        if(savedInstanceState != null) {
+            player = savedInstanceState.getParcelable(EXTRA_PLAYER)
+            when (player.league) {
+                "men's" -> mensLeagueBtn.isChecked = true
+                "women's" -> womensLeagueBtn.isChecked = true
+                "co-ed" -> coedsBtn.isChecked = true
+                else -> Unit
+            }
+        }
+    }
+
     fun onMenClicked(view: View) {
         womensLeagueBtn.isChecked = false
         coedsBtn.isChecked = false

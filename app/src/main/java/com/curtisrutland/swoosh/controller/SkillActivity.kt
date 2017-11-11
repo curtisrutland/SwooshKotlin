@@ -21,6 +21,22 @@ class SkillActivity : BaseActivity() {
         Log.d("incoming player", player.toString())
     }
 
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        outState?.putParcelable(EXTRA_PLAYER, player)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        if(savedInstanceState != null) {
+            player = savedInstanceState.getParcelable(EXTRA_PLAYER)
+            if(player.skill == "beginner") {
+                beginnerBtn.isChecked = true
+            } else if (player.skill == "baller") {
+                ballerBtn.isChecked = true
+            }
+        }
+    }
+
     fun onBeginnerClick(view: View) {
         ballerBtn.isChecked = false
         player.skill = "beginner"
