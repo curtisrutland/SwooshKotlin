@@ -1,4 +1,4 @@
-package com.curtisrutland.swoosh.Utilities
+package com.curtisrutland.swoosh.utilities
 
 /**
  * Created by inser on 11/10/2017.

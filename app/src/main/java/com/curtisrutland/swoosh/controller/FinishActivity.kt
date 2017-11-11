@@ -3,8 +3,8 @@ package com.curtisrutland.swoosh.controller
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.curtisrutland.swoosh.R
-import com.curtisrutland.swoosh.Utilities.EXTRA_LEAGUE
-import com.curtisrutland.swoosh.Utilities.EXTRA_SKILL
+import com.curtisrutland.swoosh.utilities.EXTRA_LEAGUE
+import com.curtisrutland.swoosh.utilities.EXTRA_SKILL
 import kotlinx.android.synthetic.main.activity_finish.*
 
 class FinishActivity : AppCompatActivity() {
