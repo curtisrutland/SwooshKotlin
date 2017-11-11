@@ -3,6 +3,7 @@ package com.curtisrutland.swoosh.controller
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.curtisrutland.swoosh.Utilities.EXTRA_LEAGUE
 import com.curtisrutland.swoosh.R
@@ -17,7 +18,7 @@ class LeagueActivity : BaseActivity() {
         setContentView(R.layout.activity_league)
     }
 
-    fun onNextClicked() {
+    fun onNextClicked(view: View) {
         if(selectedLeague != "") {
             Log.i("LEAGUE", "next clicked")
             val skillActivity = Intent(this, SkillActivity::class.java)
@@ -28,19 +29,19 @@ class LeagueActivity : BaseActivity() {
         }
     }
 
-    fun onMenClicked() {
+    fun onMenClicked(view: View) {
         womensLeagueBtn.isChecked = false
         coedsBtn.isChecked = false
         selectedLeague = "men's"
     }
 
-    fun onWomenClicked() {
+    fun onWomenClicked(view: View) {
         mensLeagueBtn.isChecked  = false
         coedsBtn.isChecked = false
         selectedLeague = "women's"
     }
 
-    fun onCoedClicked() {
+    fun onCoedClicked(view: View) {
         mensLeagueBtn.isChecked = false
         womensLeagueBtn.isChecked = false
         selectedLeague = "co-ed"

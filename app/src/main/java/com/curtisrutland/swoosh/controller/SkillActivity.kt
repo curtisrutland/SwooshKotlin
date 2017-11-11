@@ -24,12 +24,12 @@ class SkillActivity : BaseActivity() {
 
     fun onBeginnerClick(view: View) {
         ballerBtn.isChecked = false
-        skill = "baller"
+        skill = "beginner"
     }
 
     fun onBallerClick(view: View) {
         beginnerBtn.isChecked = false
-        skill = "beginner"
+        skill = "baller"
     }
 
     fun onFinishClick(view: View) {
