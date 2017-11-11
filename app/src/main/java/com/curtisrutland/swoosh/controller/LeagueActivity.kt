@@ -1,22 +1,23 @@
-package com.curtisrutland.swoosh
+package com.curtisrutland.swoosh.controller
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Toast
+import com.curtisrutland.swoosh.Utilities.EXTRA_LEAGUE
+import com.curtisrutland.swoosh.R
 import kotlinx.android.synthetic.main.activity_league.*
 
 class LeagueActivity : BaseActivity() {
 
-    var selectedLeague = ""
+    private var selectedLeague = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_league)
     }
 
-    fun onNextClicked(view: View) {
+    fun onNextClicked() {
         if(selectedLeague != "") {
             Log.i("LEAGUE", "next clicked")
             val skillActivity = Intent(this, SkillActivity::class.java)
@@ -27,21 +28,21 @@ class LeagueActivity : BaseActivity() {
         }
     }
 
-    fun onMenClicked(view: View) {
+    fun onMenClicked() {
         womensLeagueBtn.isChecked = false
         coedsBtn.isChecked = false
-        selectedLeague = "mens"
+        selectedLeague = "men's"
     }
 
-    fun onWomenClicked(view: View) {
+    fun onWomenClicked() {
         mensLeagueBtn.isChecked  = false
         coedsBtn.isChecked = false
-        selectedLeague = "womens"
+        selectedLeague = "women's"
     }
 
-    fun onCoedClicked(view: View) {
+    fun onCoedClicked() {
         mensLeagueBtn.isChecked = false
         womensLeagueBtn.isChecked = false
-        selectedLeague = "coed"
+        selectedLeague = "co-ed"
     }
 }

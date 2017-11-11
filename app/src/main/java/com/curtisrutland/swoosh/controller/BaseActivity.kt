@@ -1,4 +1,4 @@
-package com.curtisrutland.swoosh
+package com.curtisrutland.swoosh.controller
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
